@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isTomorrow(date) {
+        var day = new Date(date);
+        var now = new Date();
+        var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+        return day.getDate() === tomorrow.getDate() && day.getMonth() === tomorrow.getMonth() && day.getFullYear() === tomorrow.getFullYear();
+    }
+    console.log(isTomorrow("2024-12-3"));
+</script>
+</html>

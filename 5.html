@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function weekOfYear(year) {
+        var startDate = new Date(year, 0, 1);
+        var endDate = new Date(year, 11, 31)
+        var startDayOfWeek = startDate.getDay();
+        var endDayOfWeek = endDate.getDay();
+        var today = 0;
+        if(startDayOfWeek !== 1) {
+            today = 7 - startDayOfWeek + 1;
+        }
+        for(var i = 2; i <= 11; i++) {
+            today += (new Date(year, i, 0)).getDate();
+        }
+        if(endDayOfWeek !== 0) {
+            today += endDayOfWeek;
+        }
+        var weeks = Math.ceil(today / 7)
+        return weeks;
+    }
+    console.log(weekOfYear(2024-2-22));
+</script>
+</html>

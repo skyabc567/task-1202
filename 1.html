@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function add(quantity, unit, date) {
+        var units = {
+            'ms': 1,
+            'millisecond': 1,
+            's': 1000,
+            'sec': 1000,
+            'second': 1000,
+            'm': 60000,
+            'min': 60000,
+            'minute': 60000,
+            'h': 3600000,
+            'hr': 3600000,
+            'hour': 3600000,
+            'day': 864000000, 
+        }
+        var multiplier = units[unit.toLowerCase()] || 1;
+        var milliseconds = quantity * multiplier;
+        var newDate = new Date(date.getTime() + milliseconds);
+        return newDate;
+    }
+    var now = new Date();
+    var newDate = add(5, 's', now);
+    console.log(newDate);
+</script>
+</html>

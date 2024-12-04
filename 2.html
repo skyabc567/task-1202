@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function dayOfYear(timeString) {
+        var date = new Date(timeString);
+        if(isNaN(date.getTime())) {
+            throw new Error("格式错误，请重新填写"); 
+        }
+        var start = new Date(date.getFullYear(), 0, 0);
+        var diff = date - start;
+        var oneDay = 24 * 60 * 60 * 1000;
+        var days = diff / oneDay;
+        return Math.round(days);
+    }
+    console.log(dayOfYear("2004-1-30"))
+</script>
+</html>
